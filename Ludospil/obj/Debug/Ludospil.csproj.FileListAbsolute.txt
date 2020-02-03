@@ -1,0 +1,6 @@
+C:\Users\HFGF\source\repos\Ludospil\Ludospil\bin\Debug\Ludospil.exe.config
+C:\Users\HFGF\source\repos\Ludospil\Ludospil\bin\Debug\Ludospil.exe
+C:\Users\HFGF\source\repos\Ludospil\Ludospil\bin\Debug\Ludospil.pdb
+C:\Users\HFGF\source\repos\Ludospil\Ludospil\obj\Debug\Ludospil.csprojAssemblyReference.cache
+C:\Users\HFGF\source\repos\Ludospil\Ludospil\obj\Debug\Ludospil.exe
+C:\Users\HFGF\source\repos\Ludospil\Ludospil\obj\Debug\Ludospil.pdb

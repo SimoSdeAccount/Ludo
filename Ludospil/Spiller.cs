@@ -12,18 +12,19 @@ namespace Ludospil
         private string farve;
         private bool finished = false;
         private Brik[] brikker = new Brik[4];
-        private bool HarEnPaaBraet = false;
         public Spiller() {
+            //Spilleren modtager sine brikker ved instanciering
             for (int i = 0; i< brikker.Length; i++)
 			{
                 brikker[i] = new Brik();
 			}
         }
-        public bool ValidateFinish()
+        //Valider om spiller er i mål
+        public bool Finish()
         {
             for (int i = 0; i < brikker.Length; i++)
             {
-                if(brikker[i].GetSetPaaBraet == false)
+                if(brikker[i].GetSetFelt < 52)
                 {
                     finished = false;
                     return finished;
@@ -32,6 +33,27 @@ namespace Ludospil
             finished = true;
             return finished;
         }
+        //Modtag brikstatus for brik
+        public bool GetBrikStatus(int index)
+        {
+            return brikker[index].GetSetPaaBraet;
+        }
+        //Set brætstatus for brik
+        public void SetBrikStatus(int index, bool status)
+        {
+            brikker[index].GetSetPaaBraet = status;
+        }
+        //Ryk Brik
+        public void RykBrikker(int index, int antalryk)
+        {
+            brikker[index].GetSetFelt += antalryk;
+        }
+        //Få felt på en brik
+        public int BrikFelt(int index)
+        {
+            return brikker[index].GetSetFelt;
+        }
+        //Få spillerens brikker
         public Brik[] getBrikker
         {
             get { return brikker; }
@@ -47,50 +69,6 @@ namespace Ludospil
         {
             get{ return farve; }
             set{ farve = value; }
-        }
-        //brik1 vaerdier
-        public int Brik1Felt
-        {
-            get{ return brikker[0].GetSetFelt; }
-            set{ brikker[0].GetSetFelt = value; }
-        }
-        public bool Brik1Braet
-        {
-            get{ return brikker[0].GetSetPaaBraet; }
-            set{ brikker[0].GetSetPaaBraet = value; }
-        }
-        //brik2 vaerdier
-        public int Brik2Felt
-        {
-            get { return brikker[1].GetSetFelt; }
-            set { brikker[1].GetSetFelt = value; }
-        }
-        public bool Brik2Braet
-        {
-            get { return brikker[1].GetSetPaaBraet; }
-            set { brikker[1].GetSetPaaBraet = value; }
-        }
-        //brik3 vaerdier
-        public int Brik3Felt
-        {
-            get { return brikker[2].GetSetFelt; }
-            set { brikker[2].GetSetFelt = value; }
-        }
-        public bool Brik3Braet
-        {
-            get { return brikker[2].GetSetPaaBraet; }
-            set { brikker[2].GetSetPaaBraet = value; }
-        }
-        //brik4 vaerdier
-        public int Brik4Felt
-        {
-            get { return brikker[3].GetSetFelt; }
-            set { brikker[3].GetSetFelt = value; }
-        }
-        public bool Brik4Braet
-        {
-            get { return brikker[3].GetSetPaaBraet; }
-            set { brikker[3].GetSetPaaBraet = value; }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Ludospil
         public int TerningKast()
         {
             Random RanGen = new Random();
-            return RanGen.Next(1, 6);
+            return RanGen.Next(5, 7);
         }
     }
 }
